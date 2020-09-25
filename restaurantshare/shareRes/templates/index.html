@@ -204,14 +204,14 @@
         </div>
         <div class="content">
             <div class="row">
-                <form action="./sendEmail/send/" method="POST" onsubmit="return emailCheckForm();"> {% csrf_token %}
+                <form action="../sendEmail/send/" method="POST" onsubmit="return emailCheckForm();"> {% csrf_token %}
                     <div class="restaurantInfoDiv ">
                         <div class="row">
                             <div class="infoHeaderDiv">
                                 <h1>Category <small class="subTitle">상세내용을 보려면 클릭하세요.</small></h1>
                             </div>
                             <div class="categoryAddDiv">
-                                    <a href="categoryCreate/" class="categoryAddBtn btn btn-info" role="button">+</a>
+                                    <a href="../categoryCreate/" class="categoryAddBtn btn btn-info" role="button">+</a>
                             </div>
                         </div>
                         
@@ -226,7 +226,9 @@
                                     <span class="input-group-addon">
                                         <input name="checks" id="check{{restaurant.id}}" type="checkbox" value="{{restaurant.id}}">
                                     </span>
-                                    <a href="restaurantDetail/{{restaurant.id}}"><input name="res{{restaurant.id}}" id="res{{restaurant.id}}" type="text" class="form-control" disabled style="cursor: pointer;" value="{{restaurant.restaurant_name}}"></a>
+                                    <a href="../restaurantDetail/{{restaurant.id}}">
+                                        <input name="res{{restaurant.id}}" id="res{{restaurant.id}}" type="text"
+                                               class="form-control" disabled style="cursor: pointer;" value="{{restaurant.restaurant_name}}"></a>
                                 </div>
                                 {% endif %}
                                 {% endfor %}
@@ -234,7 +236,7 @@
                             </ul>
                             {% endfor %}
                         </ul>
-                        <a href="restaurantCreate/" class="sendBtn btn btn-info" role="button">맛집 추가하기</a>
+                        <a href="../restaurantCreate/" class="sendBtn btn btn-info" role="button">맛집 추가하기</a>
                     </div>
                     <div class="emailDiv">
                         <div class="emailHeaderDiv">

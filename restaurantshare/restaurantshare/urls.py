@@ -19,5 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('res/', include('shareRes.urls')),
-    path('sendEmail/', include('sendEmail.urls'))
+    path('res/sendEmail/', include('sendEmail.urls'))
 ]
